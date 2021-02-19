@@ -10,15 +10,15 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 
 const addOne = (arr) => {
   // Solution code here...
-  
-  const result = [];
-
+  const solution = [];
   arr.forEach(function(number) {
-    result.push(number + 1);
-    });
+    solution.push(number + 1);
+  });
 
-    return result;
-  };
+  return solution;
+};
+
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -29,17 +29,14 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 
 const addExclamation = (arr) => {
   // Solution code here...
-  const result = [];
-
-  arr.forEach(function(string) {
-    result.push(string + "!");
-    
-  }); 
-
-  return result;
+  const solution = [];
+  arr.forEach(function(string){
+    solution.push(string + '!');
+    console.log(solution);
+  });
+  return solution;
 };
 
-// Expected: ["hi!", "how!", "are!", "you!"]
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -50,15 +47,11 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 
 const allUpperCase = (arr) => {
   // Solution code here...
-  const result = [];
-
-  arr.forEach(function(string) {
-    
-    result.push(string.toUpperCase());
-    
+  const solution = [];
+  arr.forEach(function(string){
+    solution.push((string).toUpperCase());
   });
-
-  return result;
+  return solution;
   
 };
 
@@ -74,27 +67,11 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 
 const greeting = (word) => {
   // Solution code here...
-  const resultGreeting = [];
-
-  word.forEach(function(string) {
-
-    resultGreeting.push(string.toUpperCase() + "!" );
-   
-  });
-
-  return resultGreeting;
+  
 };
-
 
 const speaker = (words, callback) => {
   // Solution code here...
-  const result = []
-
-  words.forEach(words, callback) 
-
-    result.push(words); {
-  }
-
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -172,25 +149,25 @@ Run your tests from the console: jest challenges-01.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-describe('Testing challenge 1', () => {
+xdescribe('Testing challenge 1', () => {
   test('It should return an array with 1 added to each value of the original array', () => {
     expect(addOne([1, 2, 3, 4, 5])).toStrictEqual([2, 3, 4, 5, 6]);
   });
 });
 
-describe('Testing challenge 2', () => {
+xdescribe('Testing challenge 2', () => {
   test('It should return an array with an exclamation point added to each value of the original array', () => {
     expect(addExclamation(['hi', 'how', 'are', 'you'])).toStrictEqual(['hi!', 'how!', 'are!', 'you!']);
   });
 });
 
-describe('Testing challenge 3', () => {
+xdescribe('Testing challenge 3', () => {
   test('It should return an array of uppercase strings', () => {
     expect(allUpperCase(['hi', 'how', 'are', 'you'])).toStrictEqual(['HI', 'HOW', 'ARE', 'YOU']);
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should provide an array of strings, that get uppercased, and a "!" at the end', () => {
     expect(speaker(['hello', '301', 'students'], greeting)).toStrictEqual(['HELLO!', '301!', 'STUDENTS!']);
   });
@@ -219,4 +196,4 @@ xdescribe('Testing challenge 7', () => {
     expect(fizzbuzz(inputs)).toStrictEqual([1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'Fizz Buzz', 16]);
     expect(fizzbuzz(inputs).length).toStrictEqual(16);
   });
-})
+});
