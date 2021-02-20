@@ -10,15 +10,15 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 
 const addOne = (arr) => {
   // Solution code here...
-  
-  const result = [];
-
+  const solution = [];
   arr.forEach(function(number) {
-    result.push(number + 1);
-    });
+    solution.push(number + 1);
+  });
 
-    return result;
-  };
+  return solution;
+};
+
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -29,17 +29,14 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 
 const addExclamation = (arr) => {
   // Solution code here...
-  const result = [];
-
-  arr.forEach(function(string) {
-    result.push(string + "!");
-    
-  }); 
-
-  return result;
+  const solution = [];
+  arr.forEach(function(string){
+    solution.push(string + '!');
+    console.log(solution);
+  });
+  return solution;
 };
 
-// Expected: ["hi!", "how!", "are!", "you!"]
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -50,15 +47,11 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 
 const allUpperCase = (arr) => {
   // Solution code here...
-  const result = [];
-
-  arr.forEach(function(string) {
-    
-    result.push(string.toUpperCase());
-    
+  const solution = [];
+  arr.forEach(function(string){
+    solution.push((string).toUpperCase());
   });
-
-  return result;
+  return solution;
   
 };
 
@@ -74,27 +67,18 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 
 const greeting = (word) => {
   // Solution code here...
-  const resultGreeting = [];
+  return word.toUpperCase() + '!'; 
 
-  word.forEach(function(string) {
-
-    resultGreeting.push(string.toUpperCase() + "!" );
-   
-  });
-
-  return resultGreeting;
+  
 };
-
 
 const speaker = (words, callback) => {
   // Solution code here...
-  const result = []
-
-  words.forEach(words, callback) 
-
-    result.push(words); {
-  }
-
+  const newWords = []
+  words.forEach(word =>{
+    newWords.push(callback(word));
+  })
+  return newWords;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -112,13 +96,16 @@ Within the addNumbers function, invoke the callback function as many times as ne
 
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
-
+// expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
+//expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
 const addValues = (arr, value) => {
   // Solution code here...
+ arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -219,4 +206,4 @@ xdescribe('Testing challenge 7', () => {
     expect(fizzbuzz(inputs)).toStrictEqual([1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'Fizz Buzz', 16]);
     expect(fizzbuzz(inputs).length).toStrictEqual(16);
   });
-})
+});
