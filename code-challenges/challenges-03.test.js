@@ -12,8 +12,13 @@ Push each updated animal string into the new array. Return the new array.
 HINT: Look at the tests to see how the callback functions are used.
 
 ------------------------------------------------------------------------------------------------ */
+
 /* expect(updateAnimal(arr, upper)[0]).toStrictEqual('BEAR');
     expect(updateAnimal(arr, upper)[1]).toStrictEqual('LION'); */
+// expect(updateAnimal(arr, upper)[0]).toStrictEqual('BEAR');
+// expect(updateAnimal(arr, upper)[1]).toStrictEqual('LION');
+// const arr = ['BeAr', 'lIon'];
+
 function upper(str) {
   return str.toUpperCase(); 
 }
@@ -23,6 +28,7 @@ function lower(str) {
 }
 
 const updateAnimal = (arr, callback) => {
+
   // Solution code here...
  console.table(arr);
  console.table(callback);
@@ -33,6 +39,14 @@ const updateAnimal = (arr, callback) => {
  })
 return newFurries 
  
+ 
+  
+ 
+  
+
+  
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,8 +59,11 @@ For example: 'Cat' would come before 'apple'
 
 const sortNames = (arr) => {
   // Solution code here...
+
   arr.sort();
   return arr
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,6 +73,7 @@ Write a function called sortNumbers that takes an array of numbers and sorts the
 
 HINT: Beware... JS default is "Lexical" ordering. 
 ------------------------------------------------------------------------------------------------ */
+
 // expect(sortNumbers([8, 3, 2, 9, 12, 1, 115])).toStrictEqual([1, 2, 3, 8, 9, 12, 115]);
 const sortNumbers = (arr) => {
   // Solution code here...
@@ -63,7 +81,7 @@ const sortNumbers = (arr) => {
   arr.sort(function ( a, b){ return (a - b )} );
   
   return arr
-  
+ 
   
 };
 
@@ -77,8 +95,11 @@ HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 
 const sortBackwards = (arr) => {
   // Solution code here...
+
   arr.sort(function (a, b){ return (b-a)} );
   return arr
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -93,8 +114,11 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   // Solution code here...
+
   arr.sort();
   return arr;
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -109,6 +133,7 @@ Here is an example of the input:
   {name: 'Tote bag', price: 15}
 ];
 ------------------------------------------------------------------------------------------------ */
+
 /* expect(sortByPrice([
   {name: 'Sweatshirt', price: 45},
   {name: 'Bookmark', price: 2.50},
@@ -124,6 +149,7 @@ const sortByPrice = (arr) => {
   return arr;
   
   
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -136,6 +162,7 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = (arr) => {
   // Solution code here...
+
   arr.sort(function (a, b) {
     if(a.toLowerCase() < b.toLowerCase()) {
       return -1;
@@ -150,6 +177,7 @@ const alphabetizeBetter = (arr) => {
 });
 return arr 
 };
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
@@ -259,7 +287,9 @@ Run your tests from the console: jest challenges-03.test.js
 ------------------------------------------------------------------------------------------------ */
 
 
-xdescribe('Testing challenge 1', () => {
+
+describe('Testing challenge 1', () => {
+
   test('It should return an array of uppercase animal names', () => {
     const arr = ['BeAr', 'lIon'];
     expect(updateAnimal(arr, upper)[0]).toStrictEqual('BEAR');
@@ -323,7 +353,9 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-describe('Testing challenge 8', () => {
+
+xdescribe('Testing challenge 8', () => {
+
   test('It should sort items by their price', () => {
     expect(sortByPrice([
       {name: 'Sweatshirt', price: 45},

@@ -24,9 +24,29 @@ let starWarsPeople = [
   }
 ];
 
+const heightSwap = (arr, leftIndex, rightIndex) =>{
+  let temp = arr[leftIndex];
+  arr[leftIndex] = arr[rightIndex];
+  arr[rightIndex] = temp;
+};
+
+
 const sortStarWarsCharacters = (starWarsArr) => {
   // Solution code here...
+
+  for(let i=0;i< starWarsArr.length; i++) {
+    let end = starWarsArr.length - 1;
+    while((i + 1) < end){
+      if(starWarsArr[i].height < starWarsArr[i + 1].height){
+        heightSwap(starWarsArr, i, i + 1);
+      }
+      end--;
+    }
+  }
+    return starWarsArr;
 }
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -34,18 +54,32 @@ CHALLENGE 2
 Write a function named removeThree that takes an index and an array. The function should removes three items in the array starting with the value at the index. 
 ------------------------------------------------------------------------------------------------ */
 
+
+
+//  expect(removeThree(2, [1, 2, 3, 4, 5, 6, 7, 8])).toStrictEqual([1, 2, 6, 7, 8]);
 const removeThree = (idx, arr) => {
   // Solution code here...
+  arr.splice(idx, 3);
+  return arr;
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
 Write a function named joinArray that takes an array and joins all of the elements together in one string on a space.
------------------------------------------------------------------------------------------------- */
+------------
 
+// expect(joinArray(['hello', '301', 'students'])).toStrictEqual('hello 301 students');
 const joinArray = (arr) => {
   // Solution code here...
+ return arr.join(' ');
+  
+
+
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -61,13 +95,25 @@ For example, if the input is 'Welcome', the output will be:
 ['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', ''].
 ------------------------------------------------------------------------------------------------ */
 
-const howMuchPencil = (str) => {
-  let result = [];
-  // Solution code here...
-  return result;
-};
 
 /* ------------------------------------------------------------------------------------------------
+
+/* expect(howMuchPencil('Welcome')).toStrictEqual(['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', '']);
+    expect(howMuchPencil('Welcome').length).toStrictEqual(8);
+    expect(howMuchPencil('')).toStrictEqual(['']);
+    expect(howMuchPencil('abc')).toStrictEqual(['abc', 'bc', 'c', '']); */
+
+const howMuchPencil = (str) => {
+  // Solution code here...
+    const shavings = [];
+    shavings.push(str);
+    for (let i = 1; i <= str.length; i++) {
+      shavings.push(str.slice(i));
+}
+return shavings
+};
+  /* ------------------------------------------------------------------------------------------------
+
 CHALLENGE 5
 
 Write a function name wordsToCharList that, given a string as input, returns a new array where every element is a character of the input string.
@@ -75,9 +121,13 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
+// 
 const wordsToCharList = (arr) => {
   // Solution code here...
-};
+
+  return [...arr];
+}
+
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -124,7 +174,19 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+
+
+  for(let i=0; i < gruffaloCrumble.ingredients.length; i++){
+    let sweetSpot = [...gruffaloCrumble.ingredients[i].matchAll(' ')];
+    let targetSpot = sweetSpot[1].index;
+    let tempStorage = gruffaloCrumble.ingredients[i].substring(targetSpot + 1);
+    result.push(tempStorage);
+  }
+
+
   return result;
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
