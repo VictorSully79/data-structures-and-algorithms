@@ -27,7 +27,7 @@ const addOne = (arr) => {
   const addOne = arr.map((value) => {
      return (value +1);
   });
-  return addOne
+  return addOne  
 }
 
 /* ------------------------------------------------------------------------------------------------
