@@ -23,6 +23,7 @@ let starWarsPeople = [
     "eye_color": "red"
   }
 ];
+
 const heightSwap = (arr, leftIndex, rightIndex) =>{
   let temp = arr[leftIndex];
   arr[leftIndex] = arr[rightIndex];
@@ -46,11 +47,15 @@ const sortStarWarsCharacters = (starWarsArr) => {
 }
 
 
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
 Write a function named removeThree that takes an index and an array. The function should removes three items in the array starting with the value at the index. 
 ------------------------------------------------------------------------------------------------ */
+
+
+
 //  expect(removeThree(2, [1, 2, 3, 4, 5, 6, 7, 8])).toStrictEqual([1, 2, 6, 7, 8]);
 const removeThree = (idx, arr) => {
   // Solution code here...
@@ -59,16 +64,19 @@ const removeThree = (idx, arr) => {
 };
 
 
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
 Write a function named joinArray that takes an array and joins all of the elements together in one string on a space.
------------------------------------------------------------------------------------------------- */
+------------
+
 // expect(joinArray(['hello', '301', 'students'])).toStrictEqual('hello 301 students');
 const joinArray = (arr) => {
   // Solution code here...
  return arr.join(' ');
   
+
 
 
 
@@ -86,6 +94,10 @@ Your function should use slice within a loop and return an array of each success
 For example, if the input is 'Welcome', the output will be:
 ['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', ''].
 ------------------------------------------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------------------------------------------
+
 /* expect(howMuchPencil('Welcome')).toStrictEqual(['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', '']);
     expect(howMuchPencil('Welcome').length).toStrictEqual(8);
     expect(howMuchPencil('')).toStrictEqual(['']);
@@ -101,18 +113,21 @@ const howMuchPencil = (str) => {
 return shavings
 };
   /* ------------------------------------------------------------------------------------------------
+
 CHALLENGE 5
 
 Write a function name wordsToCharList that, given a string as input, returns a new array where every element is a character of the input string.
 
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
+
 // 
 const wordsToCharList = (arr) => {
   // Solution code here...
 
   return [...arr];
 }
+
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -159,6 +174,8 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+
+
   for(let i=0; i < gruffaloCrumble.ingredients.length; i++){
     let sweetSpot = [...gruffaloCrumble.ingredients[i].matchAll(' ')];
     let targetSpot = sweetSpot[1].index;
@@ -168,6 +185,7 @@ const listFoods = (recipe) => {
 
 
   return result;
+
 
 };
 
