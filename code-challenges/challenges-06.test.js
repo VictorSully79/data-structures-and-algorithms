@@ -143,6 +143,7 @@ const updateNumbers = (obj) => {
   }
   return blackBook;
   
+  
 };
 
 
@@ -212,7 +213,7 @@ const houseSize = (arr) => {
   const sizes = [];
   // Solution code here...
   return sizes;
-  
+
 };
 
 /* ------------------------------------------------------------------------------------------------
