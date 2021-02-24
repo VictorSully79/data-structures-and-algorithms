@@ -38,10 +38,12 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 // expect(addQuestion(['hello', '301', 'students'])).toStrictEqual(['hello?', '301?', 'students?']);
 const addQuestion = (arr) => {
   // Solution code here...
-  const stickaQuestionOnIt = (arr) => {
+  const stickaQuestionOnIt = arr.map((stickaQuestionOnIt) => {
+    return (stickaQuestionOnIt + '?');
 
-
-  }
+});
+  return stickaQuestionOnIt;
+  
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -53,9 +55,14 @@ You may choose to complete this challenge using a for loop, for...in syntax, or 
 
 For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and 2 ^ 3 = 8.
 ------------------------------------------------------------------------------------------------ */
-
+    // expect(forLoopTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
+    // expect(forLoopTwoToThe([0, 4, 5]).length).toStrictEqual(3);
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
+  const hulaHoop = arr.map((hulaHoop) => {
+     return Math.pow(2, hulaHoop);
+  })
+return hulaHoop;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -66,7 +73,14 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   // Solution code here...
+const solution = [];
+arr.forEach(function (nums){
+  solution.push(Math.pow(2, nums));
+  })
+  return solution;
 };
+ 
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -76,6 +90,11 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
+  const solution = arr.map((value) => {
+  return Math.pow(2, value);
+
+  })
+  return solution;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -90,6 +109,10 @@ For example: charCode(['h','i']) returns [104, 105].
 
 const charCode = (arr) => {
   // Solution code here...
+  const anotherNewTerm = arr.map((newTerm) =>{
+    return newTerm.charCodeAt(0);
+  })
+  return anotherNewTerm;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -222,13 +245,13 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should add a question mark to the end of each string', () => {
     expect(addQuestion(['hello', '301', 'students'])).toStrictEqual(['hello?', '301?', 'students?']);
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return two raised to the power of the integer', () => {
     expect(forLoopTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
     expect(forLoopTwoToThe([0, 4, 5]).length).toStrictEqual(3);
@@ -239,7 +262,7 @@ xdescribe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return two raised to the power of the integer', () => {
     expect(forEachTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
     expect(forEachTwoToThe([0, 4, 5]).length).toStrictEqual(3);
@@ -250,7 +273,7 @@ xdescribe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return two raised to the power of the integer', () => {
     expect(mapTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
     expect(mapTwoToThe([0, 4, 5]).length).toStrictEqual(3);
@@ -261,7 +284,7 @@ xdescribe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return an array containing the character code for each letter', () => {
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([ 67, 111, 100, 101, 51, 48, 49 ]);
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1']).length).toStrictEqual(7);
