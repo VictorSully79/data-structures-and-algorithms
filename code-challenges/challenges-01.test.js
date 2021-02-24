@@ -146,7 +146,7 @@ const createList = (availableItems) => {
     console.log(thing.name)
     console.log(thing.available);
   })
-  
+
   return newItems;
 }
   
