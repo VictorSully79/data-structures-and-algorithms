@@ -74,7 +74,6 @@ const validateEmail = (email) => {
   // Solution code here...
   const validEmail = /^(\w+[.])?\w+@\w+\.(net|com|org)$/;
   return validEmail.test(email);
-
 };
 
 /* ------------------------------------------------------------------------------------------------
