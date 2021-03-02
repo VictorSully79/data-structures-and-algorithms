@@ -157,6 +157,10 @@ Write a function named getHouses that returns a new array containing the names o
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  const raiseTheRoof = Object.entries(arr);
+  for(let key in raiseTheRoof){
+    houses.push(raiseTheRoof[key][1].house);
+  }
   return houses;
 };
 
@@ -174,6 +178,13 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
+  for(let i in arr){
+    if(arr[i].name === character){
+      return arr[i].children.length > 0;
+    }
+  }
+  return false;
+
 
 };
 
@@ -286,7 +297,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return an array of the names of the houses', () => {
     expect(getHouses(characters)[0]).toStrictEqual('Greyjoy');
     expect(getHouses(characters).length).toStrictEqual(7);
@@ -294,7 +305,7 @@ xdescribe('Testing challenge 5', () => {
 });
 
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenValues(characters, 'Daenarys')).toBeTruthy();
   });
