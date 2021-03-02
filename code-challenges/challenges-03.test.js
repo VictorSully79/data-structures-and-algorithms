@@ -28,7 +28,7 @@ const updateAnimal = (arr, callback) => {
     transformedAnimal.push(callback(value));
   }) 
   
-  return transformedAnimal;
+   return transformedAnimal;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -152,7 +152,7 @@ const sortByPrice = (arr) => {
     else return 0;
     
   })
-  return arr;
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
