@@ -145,12 +145,19 @@ Here is an example of the input:
 ]); */
 const sortByPrice = (arr) => {
   // Solution code here...
-  name.price(function sort(a, b) {return (a - b)});
-  return arr;
-  
-  
-
+    arr.sort(function (a, b){
+      if(a.price < b.price){
+        return -1;
+      }
+      if(a.price > b.price){
+        return +1;
+      }
+      else return 0;
+      
+    })
+  return arr;    
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -302,19 +309,19 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return an array of names sorted alphabetically', () => {
     expect(sortNames(['able', 'Bob'])[0]).toStrictEqual('Bob');
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should sort low-to-high the numbers in an array', () => {
     expect(sortNumbers([8, 3, 2, 9, 12, 1, 115])).toStrictEqual([1, 2, 3, 8, 9, 12, 115]);
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should sort high-to-low the numbers in an array', () => {
     const nums = [3,4,5,6,7];
     expect(sortBackwards(nums)).toStrictEqual([7,6,5,4,3]);
@@ -325,7 +332,7 @@ xdescribe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should sort strings alphabetically', () => {
     expect(alphabetize(['alphabet', 'Zebra', 'Alphabet', 'carrot'])).toStrictEqual([ 'Alphabet', 'Zebra', 'alphabet', 'carrot']);
     expect(alphabetize(['alphabet','Alphabet', 'carrot'])).toStrictEqual([ 'Alphabet', 'alphabet', 'carrot']);
@@ -344,7 +351,7 @@ xdescribe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should alphabetize without regard to capitalization', () => {
     expect(alphabetizeBetter(['Alice', 'apple', 'alert', 'Average'])).toStrictEqual([ 'alert', 'Alice', 'apple', 'Average' ]);
     const ans = alphabetizeBetter(['alphabet', 'Zebra', 'Alphabet', 'carrot']);
@@ -354,7 +361,7 @@ xdescribe('Testing challenge 7', () => {
 });
 
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
 
   test('It should sort items by their price', () => {
     expect(sortByPrice([
