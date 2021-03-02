@@ -180,7 +180,6 @@ const alphabetizeBetter = (arr) => {
     }
     
     
-     
 });
 return arr 
 };
