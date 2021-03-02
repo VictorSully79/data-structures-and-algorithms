@@ -8,6 +8,12 @@ Write a function called addTwo that takes in an array and adds two to every valu
 
 const addTwo = (arr) => {
   // Solution code here...
+  const plusTwo = [];
+
+  arr.forEach(value => {
+    plusTwo.push(value + 2);
+  })
+  return plusTwo;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -19,6 +25,8 @@ Write a function named containsW that takes in a string. This function should us
 
 const containsW = (str) => {
   // Solution code here...
+  const moBettaW = new RegExp(/w/);
+  return moBettaW.test(str);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,6 +43,8 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
+  const isItTrue = new RegExp(/\d+/);
+  return isItTrue.test(input) || typeof(input) == Number;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,6 +56,8 @@ Write a function named containsWorld that takes in a string or number of any len
 
 const containsWorld = (input) => {
   // Solution code here...
+  const theWorldisMyRegex = new RegExp(/world/);
+  return theWorldisMyRegex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -58,6 +70,18 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
+  const theCapitalOf = [];
+  const maybe = [...str.split(" ")];
+  const couldBe = /\b[A-Z]\w{1,}\b/;
+
+  maybe.forEach(word =>{
+    if(word.match(couldBe)){
+      theCapitalOf.push(word.match(couldBe)[0]);
+    }
+  })
+  return theCapitalOf;
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -68,6 +92,17 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  const nameThatCapital = /(?:\b[A-J]\w+\b)/;
+  const theWinnerIs = [];
+  
+  arr.forEach(city => {
+    const newCity = city.replace(/\s+/g,'');
+    if(nameThatCapital.test(newCity)){
+      theWinnerIs.push(city)
+    }  
+  })
+  return theWinnerIs;
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
