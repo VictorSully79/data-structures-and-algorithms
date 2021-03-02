@@ -179,7 +179,6 @@ const alphabetizeBetter = (arr) => {
       return 0;
     }
     
-    
 });
 return arr 
 };
