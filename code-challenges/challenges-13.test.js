@@ -5,6 +5,7 @@ CHALLENGE 1 - Review
 
 Write a function named longestString that takes in an array of strings and returns the index position of the longest string. 
 ------------------------------------------------------------------------------------------------ */
+
     // expect(longestString(strArray1)).toStrictEqual(2);
     // expect(longestString(strArray2)).toStrictEqual(-1);
     // expect(longestString(strArray3)).toStrictEqual(0);
@@ -13,6 +14,12 @@ const longestString = (arr) => {
 console.log(arr);
 const longestString = arr.map(value => value.length);
 return longestString.indexOf(Math.max(...longestString));
+
+
+const longestString = (arr) => {
+// Solution code here...
+
+
 };
   
 /* ------------------------------------------------------------------------------------------------
@@ -22,12 +29,18 @@ Write a function named firstLetters that takes in an array of strings and return
 
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 'w', 'w', ':']
 ------------------------------------------------------------------------------------------------ */
+
   //     expect(firstLetters(words)).toStrictEqual(['a', 'b', 'c']);
   //     expect(firstLetters(['a', 'b', 'c', 'd'])).toStrictEqual(['a', 'b', 'c', 'd']);
   //     expect(firstLetters([])).toStrictEqual([]);
 const firstLetters = (arr) => {
   // Solution code here...
   return arr.map(value => value[0]);
+
+
+const firstLetters = (arr) => {
+  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,11 +53,14 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 
 const findHappiness = (arr) => {
   // Solution code here...
+
   console.log(arr);
   return arr.filter(value => {
     let colonCleanse = /(:)\)/gm
     return colonCleanse.test(value);
   })
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -57,8 +73,11 @@ For example, (123) 456-7890 returns 1234567890
 
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
+
   console.log(arr);
   return arr.map(value => value.split('').filter(value => /\d/g.test(value)).join(''));
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,8 +90,11 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
+
   console.log(str);
   return str.split('').filter((value, index) => index % 2 !== 0).join('');
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,8 +105,11 @@ Write a function named allHappy that takes in an array of strings and returns a 
 
 const allHappy = (arr) => {
   // Solution code here...
+
   console.log(arr);
   return !arr.map(value => /(\:\))/gm.test(value)).includes(false);
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
